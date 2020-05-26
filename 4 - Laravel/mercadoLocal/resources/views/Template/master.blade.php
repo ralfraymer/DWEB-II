@@ -28,10 +28,9 @@
 </header>
 
 
-<body>
-  <div id="content" class="p-4 p-md-5 pt-5 bg-dark">
-    <div class="container">
-
+<body class="bg-dark">
+  <div id="content" class="p-4 p-md-5 pt-5">
+    <div class="container bg-light p-4">
         @yield('content')
     </div>
   </div>

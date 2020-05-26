@@ -20,8 +20,9 @@ Route::get('/', function () {
 Route::group(['prefix' => 'produto', 'as', 'produto.', 'namespace' => 'Produto'], function () {
     Route::get('/', ['as' => 'lista', 'uses' =>  'ProdutoController@lista']);
 
-    Route::post('/', ['as' => 'add', 'uses' => 'ProdutoController@add']);
-    Route::get('/delete/{id}', ['as' => 'deletar', 'uses' => 'ProdutoController@deletar']);
+    Route::get('/cadastrar', ['as' => 'add', 'uses' => 'ProdutoController@cadastrar']);
+    Route::post('/cadastrar', ['as' => 'add', 'uses' => 'ProdutoController@create']);
+    Route::get('/deletar/{id}', ['as' => 'deletar', 'uses' => 'ProdutoController@deletar']);
 
     Route::get('/alterar/{id}', ['as' => 'editar', 'uses' => 'ProdutoController@editar']);
     Route::post('/alterar/{id}', ['as' => 'alterar', 'uses' => 'ProdutoController@update']);

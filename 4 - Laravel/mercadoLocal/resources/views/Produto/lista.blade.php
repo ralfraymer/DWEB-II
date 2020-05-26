@@ -4,12 +4,11 @@ Lista de produtos
 @endsection
 
 @section('content')
-<div class="bg-light p-4">
     <div class="title m-b-md text-center">
         <h2>Lista de produtos</h2>
     </div>
     <hr>
-    <a class="btn btn-success m-2" href="produtos/adicionar" role="button">Adicionar</a>
+    <a class="btn btn-success m-2" href="produto/cadastrar" role="button">Adicionar</a>
     <table class="table table-hover">
         <thead>
           <tr>
@@ -45,5 +44,4 @@ Lista de produtos
             @endif
         </tbody>
       </table>
-</div>
 @endsection
