@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'produto', 'as', 'produto.', 'namespace' => 'produto'], function () {
+    Route::get('/', ['as' => 'index', 'uses' =>  'ProdutoController@home']);
+    Route::post('/', ['as' => 'index', 'uses' => 'ProdutoController@add']);
+    Route::get('/delete/{id}', ['as' => 'delete', 'uses' => 'ProdutoController@del']);
+
+    Route::get('/alterar/{id}', ['as' => 'alterar', 'uses' => 'ProdutoController@editarItem']);
+    Route::post('/alterar/{id}', ['as' => 'alterar', 'uses' => 'ProdutoController@update']);
+});
