@@ -16,3 +16,13 @@ function ex02(){
         alert('Você excluiu o produto ' + codProd)
     }
 }
+//Exercício 03
+function ex03(){
+    document.getElementById("tipoTitulos").innerHTML = ""
+    for (let i = 1; i <= 6; i++) {      
+        var para = document.createElement("H"+i)                   
+        var texto = document.createTextNode("Exemplo H"+i)
+        para.appendChild(texto)                                        
+        document.getElementById("tipoTitulos").appendChild(para)    
+    }
+}
