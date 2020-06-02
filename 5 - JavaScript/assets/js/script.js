@@ -28,3 +28,9 @@ function ex03(){
         document.getElementById("tipoTitulos").appendChild(para)    
     }
 }
+
+
+//Exercício 04
+function excluirProduto(){
+    ex02();
+}
