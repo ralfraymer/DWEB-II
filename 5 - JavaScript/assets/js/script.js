@@ -30,7 +30,19 @@ function ex03(){
 }
 
 
-//Exercício 04
+//Exercício 04 e Exercício 05
 function excluirProduto(){
     ex02();
 }
+
+
+//Exercício 06 
+function calcularIMC(){
+    var altura = prompt('Qual a sua altura?');
+    var peso = prompt('Qual o seu peso?');
+
+    var imc = peso / (altura * altura);
+    imc = parseFloat(imc.toFixed(2))
+    alert("O seu IMC é de: "+ imc);
+}
+
