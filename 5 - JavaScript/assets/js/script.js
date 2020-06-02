@@ -37,12 +37,24 @@ function excluirProduto(){
 
 
 //Exercício 06 
-function calcularIMC(){
-    var altura = prompt('Qual a sua altura?');
-    var peso = prompt('Qual o seu peso?');
+function calcularIMC(alt, peso){
+    if(!alt & !peso){
+        var alt = prompt('Qual a sua altura?');
+        var peso = prompt('Qual o seu peso?');
+    }
 
-    var imc = peso / (altura * altura);
+    var imc = peso / (alt * alt);
     imc = parseFloat(imc.toFixed(2))
     alert("O seu IMC é de: "+ imc);
 }
 
+//Exercício 07
+function capturaInputIMC(){
+    var altura = document.getElementById('altura').value;
+    var peso = document.getElementById('peso').value;
+    if(peso != "" & altura != ""){
+        calcularIMC(altura, peso)
+    }else{
+        alert("Digite a altura/Peso!")
+    }
+}
