@@ -10,10 +10,12 @@ function ex01(){
 //Exercício 02
 function ex02(){
     var codProd = prompt('Qual o código do produto que você deseja excluir?')
-    var confirmar = confirm('Você quer excluir o produto ' + codProd +'?')
+    if (codProd != null){
+        var confirmar = confirm('Você quer excluir o produto ' + codProd +'?')
+            if(confirmar){
+                alert('Você excluiu o produto ' + codProd)
+            }
 
-    if(confirmar){
-        alert('Você excluiu o produto ' + codProd)
     }
 }
 //Exercício 03
