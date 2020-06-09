@@ -108,3 +108,16 @@ function verificaOS() {
 
     return OSNome;
 }
+
+// Exercício 09 
+
+function alteraInput() {
+    var inputMensagem = document.getElementById('inputMensagem').value
+    document.getElementById("mensagem").innerHTML = ""
+    
+    var p = document.createElement("p")
+    var mensagem = document.createTextNode(inputMensagem)
+    p.appendChild(mensagem)
+    document.getElementById("mensagem").appendChild(p)
+}
+

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercícios de JS</title>
-    
+
 </head>
+
 <body>
     <h2>Exercícios Javascript</h2>
     <hr>
@@ -33,37 +35,52 @@
     <hr>
     <div>
         <h3>Exercício 06 - IMC</h3>
-            <button onclick="calcularIMC()">Clique aqui para cálcular o seu IMC!</button>
-        </div>
+        <button onclick="calcularIMC()">Clique aqui para cálcular o seu IMC!</button>
+    </div>
     <hr>
     <div>
         <h3>Exercício 07 - IMC com input</h3>
-            <label for="altura">Altura: </label>
-            <input type="text" id="altura">
-            <br>
-            <br>
-            <label for="peso">Peso: </label>
-            <input type="text" id="peso">
-            <br>
-            <br>
-            <button onclick="capturaInputIMC()">Calcular IMC</button>
-        </div>
+        <label for="altura">Altura: </label>
+        <input type="text" id="altura">
+        <br>
+        <br>
+        <label for="peso">Peso: </label>
+        <input type="text" id="peso">
+        <br>
+        <br>
+        <button onclick="capturaInputIMC()">Calcular IMC</button>
+    </div>
     <hr>
     <div>
         <h3>Exercício 08 - IMC com input</h3>
-            <button onclick="continentePais()">Continentes</button>
-        </div>
+        <button onclick="continentePais()">Continentes</button>
+    </div>
     <hr>
     <div>
         <h3>Exercício 09 - Dados do Navegador</h3>
-            <button onclick="dadosNavegador()">Dados do Navegador</button>
-            <div id="dadosNavegador"></div>
+        <button onclick="dadosNavegador()">Dados do Navegador</button>
+        <div id="dadosNavegador"></div>
+    </div>
+    <hr>
+    <div>
+        <h3>Exercício 10 - Alterando mensagem</h3>
+        <div class="form-group">
+            <label for="inputMensagem">Mensagem</label>
+            <br>
+            <input type="text" name="inputMensagem" id="inputMensagem" aria-describedby="Mensagem">
+            <button onclick="alteraInput()">alterar</button>
         </div>
+        <br>
+        <div id="mensagem">
+            <p>Conteúdo inicial deve ser substituido pelo texto do usuário!</p>
+        </div>
+    </div>
     <hr>
 
 
     <script src="assets/js/script.js">
-    
+
     </script>
 </body>
+
 </html>
