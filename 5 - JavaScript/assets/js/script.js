@@ -73,3 +73,38 @@ function continentePais() {
         }
     }
 }
+
+
+//Exercício 09
+function dadosNavegador() {
+    document.getElementById('dadosNavegador').innerHTML = ""
+    var txt = "";
+    var version = "";
+    // navigator.appVersion
+
+    txt += "<p>Sistema Operacional: " + verificaOS() + "</p>";
+    txt += "<p>Nome do Navegador: " + navigator.appCodeName + "</p>";
+    for (let index = 0; index < 3; index++) {
+        version += navigator.appVersion[index];
+    }
+    txt += "<p>Versão do Navegador: " + version + "</p>";
+    txt += "<p>Idioma Navegador: " + navigator.language + "</p>";
+
+    txt += "<hr>";
+    document.getElementById('dadosNavegador').innerHTML = txt
+}
+
+function verificaOS() {
+    var OSNome = "";
+    if (window.navigator.userAgent.indexOf("Windows NT 10.0") != -1) OSNome = "Windows 10";
+    if (window.navigator.userAgent.indexOf("Windows NT 6.2") != -1) OSNome = "Windows 8";
+    if (window.navigator.userAgent.indexOf("Windows NT 6.1") != -1) OSNome = "Windows 7";
+    if (window.navigator.userAgent.indexOf("Windows NT 6.0") != -1) OSNome = "Windows Vista";
+    if (window.navigator.userAgent.indexOf("Windows NT 5.1") != -1) OSNome = "Windows XP";
+    if (window.navigator.userAgent.indexOf("Windows NT 5.0") != -1) OSNome = "Windows 2000";
+    if (window.navigator.userAgent.indexOf("Mac") != -1) OSNome = "Mac/iOS";
+    if (window.navigator.userAgent.indexOf("X11") != -1) OSNome = "UNIX";
+    if (window.navigator.userAgent.indexOf("Linux") != -1) OSNome = "Linux";
+
+    return OSNome;
+}
