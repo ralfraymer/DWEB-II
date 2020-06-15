@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/calculadora.js"></script>
+</head>
+
+<body>
+    <div class="calculator">
+        <input id="display" value="0" class="display">
+        <input class="button triple" onclick="clearMemory()" value="AC">
+        <input class="button operation" value="/" onclick="addDigit('/')" value="/">
+        <input class="button" value="7" onclick="addDigit(7)" value="7">
+        <input class="button" value="8" onclick="addDigit(8)" value="8">
+        <input class="button" value="9" onclick="addDigit(9)" value="9">
+        <input class="button operation" value="*" onclick="addDigit('*')" value="*">
+        <input class="button" value="4" onclick="addDigit(4)" value="4">
+        <input class="button" value="5" onclick="addDigit(5)" value="5">
+        <input class="button" value="6" onclick="addDigit(6)" value="6">
+        <input class="button operation" value="-" onclick="addDigit('-')" value="-">
+        <input class="button" value="1" onclick="addDigit(1)" value="1">
+        <input class="button" value="2" onclick="addDigit(2)" value="2">
+        <input class="button" value="3" onclick="addDigit(3)" value="3">
+        <input class="button operation" value="+" onclick="addDigit('+')" value="+">
+        <input class="button double" value="0" onclick="addDigit(0)" value="0">
+        <input class="button button" value="." onclick="addDigit('.')" value=".">
+        <input class="button operation" value="=" onclick="total()" value="=">
+    </div>
+</body>
+
+</html>
