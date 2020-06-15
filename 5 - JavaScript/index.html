@@ -76,6 +76,42 @@
         </div>
     </div>
     <hr>
+    <div>
+        <h3>Exercício 11 - Calculadora</h3>
+        <a href="http://calcuradora.html"></a>
+        <br>
+        <div id="mensagem">
+            <p>Conteúdo inicial deve ser substituido pelo texto do usuário!</p>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <script>
+            setInterval(function () {
+                let novaHora = new Date();
+
+                let hora = novaHora.getHours();
+                let minuto = novaHora.getMinutes();
+                let segundo = novaHora.getSeconds();
+
+                minuto = zero(minuto);
+                segundo = zero(segundo);
+
+                document.getElementById('hora').textContent = hora + ':' + minuto + ':' + segundo;
+            }, 1000)
+
+            function zero(x) {
+                if (x < 10) {
+                    x = '0' + x;
+                }
+                return x;
+            }
+
+        </script>
+        <h3>Exercício 12 - Hora atual</h3>
+        <h4 id="hora"></h4>
+    </div>
+    <hr>
 
 
     <script src="assets/js/script.js">
