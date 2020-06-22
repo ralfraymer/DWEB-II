@@ -25,10 +25,9 @@ Route::group(['prefix' => 'v1'], function () {
             $p = Produto::Find($id);
 
             if($p->delete()){
-                return response('ok', 200)->header('Content-Type', 'text/json')
+                return response('ok', 200)->header('Content-Type', 'text/json');
             }
-        })
-
+        });
     });
 });
 
