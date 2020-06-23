@@ -83,4 +83,9 @@ class ProdutoController extends Controller
         Produto::find($id)->delete();
         return redirect('/produto');
     }
+
+
+    public function jquery(){
+        return view('Produto.produtoJquery');
+    }
 }

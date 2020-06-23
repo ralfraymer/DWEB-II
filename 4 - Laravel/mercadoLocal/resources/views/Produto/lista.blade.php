@@ -14,11 +14,11 @@ Lista de produtos
           <tr>
             <th scope="col">#</th>
             <th scope="col">Produto</th>
-            <th scope="col">Preço</th>
             <th scope="col">Descrição</th>
             <th scope="col">Categoria</th>
-            <th scope="col">Qtd</th>
-            <th scope="col" class="text-center">Ação</th>
+            <th class="text-center" scope="col">Qtd</th>
+            <th class="text-center" scope="col">Preço</th>
+            <th class="text-center" scope="col" class="text-center">Ação</th>
           </tr>
         </thead>
         <tbody>
@@ -27,11 +27,11 @@ Lista de produtos
                 <tr>
                     <th scope="row">{{$item->id}}</th>
                     <td>{{$item->nome}}</td>
-                    <td>{{$item->valor}}</td>
                     <td>{{$item->descricao}}</td>
                     <td>{{$item->categoria}}</td>
                     <td class="text-center">{{$item->quantidade}}</td>
-                    <td>
+                    <td class="text-center">{{$item->valor}}</td>
+                    <td class="text-center">
                         <a class="btn btn-sm btn-primary" href="produto/alterar/{{$item->id}}">Alterar</a>
                         <a class="btn btn-sm btn-danger" href="produto/deletar/{{$item->id}}">Excluir</a>
                     </td>

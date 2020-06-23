@@ -26,4 +26,6 @@ Route::group(['prefix' => 'produto', 'as', 'produto.', 'namespace' => 'Produto']
 
     Route::get('/alterar/{id}', ['as' => 'editar', 'uses' => 'ProdutoController@editar']);
     Route::post('/alterar/{id}', ['as' => 'alterar', 'uses' => 'ProdutoController@update']);
+
+    Route::get('/jquery', ['as' => 'jquery', 'uses' => 'ProdutoController@jquery']);
 });
