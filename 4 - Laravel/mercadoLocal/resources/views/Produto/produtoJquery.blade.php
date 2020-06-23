@@ -12,9 +12,6 @@ Lista de produtos
 <button id="btnModal" type="button" class="btn btn-success my-2" data-toggle="modal" data-target="#modalAdicionar">
     Adicionar
 </button>
-<button id="atualizaTabela" type="button" class="btn btn-info my-2">
-    Atualizar
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="modalAdicionar" aria-hidden="true">

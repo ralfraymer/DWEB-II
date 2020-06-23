@@ -1,51 +1,6 @@
 $(document).ready(function () {
     renderTabela()
 
-    $('#btnModal').click(function () {
-        if ($("#titleModal").text() !== "Adicionar Produtos") {
-            $("#titleModal").text("Adicionar Produtos")
-            limparCampos()
-            $('#btnAlterarProduto').hide()
-            $('#btnSalvarProduto').show()
-        }
-    })
-
-    $("#btnSalvarProduto").click(function () {
-        $.ajax({
-            url: '/api/v1/produto',
-            type: "POST",
-            dataType: 'script',
-            data: {
-                'nome': $('input[name="nome"]').val(),
-                'categoria': $('input[name="categoria"]').val(),
-                'descricao': $('textarea[name="descricao"]').val(),
-                'quantidade': $('input[name="quantidade"]').val(),
-                'valor': $('input[name="valor"]').val()
-            }
-        })
-            .then(function (response) {
-                renderTabela()
-                limparCampos()
-                $("#modalAdicionar").modal('toggle');
-            })
-            .catch(function (err) {
-                console.log(err)
-            });
-
-    })
-
-    $("#atualizaTabela").click(function () {
-        renderTabela()
-    })
-
-    function limparCampos() {
-        $('input[name="nome"]').val("")
-        $('input[name="categoria"]').val("")
-        $('textarea[name="descricao"]').val("")
-        $('input[name="quantidade"]').val("")
-        $('input[name="valor"]').val("")
-    }
-
     function renderTabela() {
         $.getJSON("/api/v1/produtos", function (data, status) {
             let tabela = $("#tableProdutosBody")
@@ -73,11 +28,50 @@ $(document).ready(function () {
         })
     }
 
+    function limparCampos() {
+        $('input[name="nome"]').val("")
+        $('input[name="categoria"]').val("")
+        $('textarea[name="descricao"]').val("")
+        $('input[name="quantidade"]').val("")
+        $('input[name="valor"]').val("")
+    }
+
+    $('#btnModal').click(function () {
+        if ($("#titleModal").text() !== "Adicionar Produtos") {
+            $("#titleModal").text("Adicionar Produtos")
+            limparCampos()
+            $('#btnAlterarProduto').hide()
+            $('#btnSalvarProduto').show()
+        }
+    })
+
+    $("#btnSalvarProduto").click(function () {
+        $.ajax({
+            url: '/api/v1/produto',
+            type: "POST",
+            data: {
+                'nome': $('input[name="nome"]').val(),
+                'categoria': $('input[name="categoria"]').val(),
+                'descricao': $('textarea[name="descricao"]').val(),
+                'quantidade': $('input[name="quantidade"]').val(),
+                'valor': $('input[name="valor"]').val()
+            }
+        })
+            .then(function (response) {
+                renderTabela()
+                limparCampos()
+                $("#modalAdicionar").modal('toggle');
+            })
+            .catch(function (err) {
+                console.log(err)
+            })
+    })
+
     $(document).on("click", '.btn-deletar', function () {
         var id = $(this).closest('tr').data('id')
         if (confirm("Clique em ok para excluir o produto " + id + "!")) {
             $.ajax({
-                url: '/api/v1/produto/' + id,
+                url: '/api/v1/produto/' + id,    
                 method: "delete",
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'text'
@@ -88,7 +82,6 @@ $(document).ready(function () {
                 .fail(function (err) {
                 });
         }
-
     });
 
     $(document).on("click", '.btn-alterar', function () {
@@ -115,7 +108,6 @@ $(document).ready(function () {
         $.ajax({
             url: '/api/v1/produto/' + id,
             type: "PUT",
-            dataType: 'script',
             data: {
                 'nome': $('input[name="nome"]').val(),
                 'categoria': $('input[name="categoria"]').val(),
@@ -124,14 +116,13 @@ $(document).ready(function () {
                 'valor': $('input[name="valor"]').val()
             }
         })
-            .then(function (response) {
+            .done(function (response) {
                 renderTabela()
                 limparCampos()
                 $("#modalAdicionar").modal('toggle');
             })
-            .catch(function (err) {
+            .fail(function (err) {
                 console.log(err)
             });
-
     })
 })
